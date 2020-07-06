@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express()
 
-app.get('/api/customers',(req,res)=>{
+app.get('/api/books',(req,res)=>{
     const customers = [
         {
             id:1,name:'ibrahim',
@@ -13,9 +13,9 @@ app.get('/api/customers',(req,res)=>{
             id:3,name:'said',
         }
     ]
-    res.send(customers);
+    return res.status(200).json(customers);
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT,()=>console.log(`server listent on port ${PORT}`))

@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes(['register' => false]);
+
+Route::get('home', 'HomeController@index')->name('home');
+Route::get('library/book/index', 'LibraryController@bookIndex')->name('library.book.index');
+Route::get('library/book/create', 'LibraryController@bookCreate')->name('library.book.create');
+Route::post('library/book/store', 'LibraryController@bookStore')->name('library.book.store');
+Route::post('library/book/update', 'LibraryController@bookUpdate')->name('library.book.update');
+
+Route::get('home', 'HomeController@index')->name('home');
+Route::get('library/cate/index', 'LibraryController@cateIndex')->name('library.cate.index');
+Route::get('library/cate/create', 'LibraryController@cateCreate')->name('library.cate.create');
+Route::post('library/cate/store', 'LibraryController@cateStore')->name('library.cate.store');
+Route::post('library/cate/update', 'LibraryController@cateUpdate')->name('library.cate.update');
