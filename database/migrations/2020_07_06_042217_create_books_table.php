@@ -22,9 +22,10 @@ class CreateBooksTable extends Migration
             $table->string('juz')->nullable();
             $table->string('cover')->nullable();
             $table->string('isbn')->nullable();
-            $table->string('prepared')->nullable();
+            $table->string('preparedby')->nullable();
+            $table->string('pages')->nullable();
             $table->boolean('available')->default(1);
-            $table->string('cate');
+            $table->integer('cate_id');
             $table->timestamps();
         });
     }

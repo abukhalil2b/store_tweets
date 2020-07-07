@@ -10,7 +10,7 @@
                 <div class="card-body">
                    
 
-					<form method="post" action="{{route('library.book.store')}}">
+					<form method="post" action="{{route('library.book.store')}}" enctype="multipart/form-data">
 						@csrf
                     <table>
                     	<tr>
@@ -34,10 +34,6 @@
                     		<td><input name="juz" class="form-control"></td>
                     	</tr>
                     	<tr>
-                    		<td>cover</td>
-                    		<td><input name="cover" class="form-control"></td>
-                    	</tr>
-                    	<tr>
                     		<td>isbn</td>
                     		<td><input name="isbn" class="form-control"></td>
                     	</tr>
@@ -45,15 +41,25 @@
                     		<td>prepared</td>
                     		<td><input name="prepared" class="form-control"></td>
                     	</tr>
-                    	
+                    	<tr>
+                            <td>pages</td>
+                            <td><input name="pages" class="form-control" type="number" ></td>
+                        </tr>
                     	<tr>
                     		<td>cate</td>
                     		<td>
-                    			<select name="cate">
-                    				<option value=""></option>
+                    			<select name="cate_id">
+                                    @foreach($cates as $cate)
+                    				<option value="{{$cate->id}}">{{$cate->title}}</option>
+                                    @endforeach
                     			</select>
                     		</td>
                     	</tr>
+                        <tr>
+                            <td colspan="2">
+                                <button class="btn btn-info btn-block">save</button>
+                            </td>
+                        </tr>
                     </table>
                     </form>
                 </div>

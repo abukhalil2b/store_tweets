@@ -28,7 +28,8 @@ class LibraryController extends Controller
 
     public function bookCreate()
     {
-        return view('library.book.create');
+        $cates = Cate::all();
+        return view('library.book.create',compact('cates'));
     }
 
     public function bookStore(Request $request)
@@ -37,7 +38,7 @@ class LibraryController extends Controller
     		['title'=>'required']
     	);
     	Book::create($request->except('_token'));
-        return redirect()->route('library.book.index');
+        return redirect()->route('library.book.index')->with(['status'=>'تم اضافة الكتاب']);
     }
 
     public function bookEdit($id)
@@ -53,18 +54,15 @@ class LibraryController extends Controller
     }
 
 
-        /**
+    /**
      * Cate
      */
-    public function cateIndex()
-    {
-    	$cates = Cate::all();
-        return view('library.cate.index',compact('cates'));
-    }
+
 
     public function cateCreate()
     {
-        return view('library.cate.create');
+        $cates = Cate::all();
+        return view('library.cate.create',compact('cates'));
     }
 
     public function cateStore(Request $request)
@@ -73,7 +71,7 @@ class LibraryController extends Controller
     		['title'=>'required']
     	);
     	Cate::create($request->except('_token'));
-        return redirect()->route('library.cate.index');
+        return redirect()->route('library.cate.create');
     }
 
     public function cateEdit($id)

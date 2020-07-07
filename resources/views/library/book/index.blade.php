@@ -6,9 +6,10 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                	<p>index</p>
-                	<a class="btn btn-info" href="{{route('library.book.create')}}">create book</a>
-                	<a class="btn btn-info" href="{{route('library.cate.create')}}">create cate</a>
+                    <div class="flex flex-sp">
+                        <a class="btn btn-info" href="{{route('library.book.create')}}">كتاب جديد</a>
+                        <a class="btn btn-info" href="{{route('library.cate.create')}}">صنف جديد</a>
+                    </div>
                 </div>
 
                 <div class="card-body">
@@ -18,10 +19,11 @@
                         </div>
                     @endif
 					
-                    <table>
-                    	<tr>
-                    		<td>title</td>
-                    	</tr>
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <td>قائمة الكتب</td>
+                        </tr>
+                    	
                     	@foreach($books as $book)
                     	<tr>
                     		<td>{{$book->title}}</td>
