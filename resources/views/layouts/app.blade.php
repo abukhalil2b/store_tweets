@@ -73,6 +73,15 @@
         </nav>
 
         <main class="py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col py-4">
+                        <a class="btn btn-info" href="{{route('library.book.index')}}">قائمة الكتب </a>
+                        <a class="btn btn-info" href="{{route('library.book.create')}}">كتاب جديد</a>
+                        <a class="btn btn-info" href="{{route('library.cate.create')}}">صنف جديد</a>
+                    </div>
+                </div>
+            </div>
             @yield('content')
         </main>
     </div>

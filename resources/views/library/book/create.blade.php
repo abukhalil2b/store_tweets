@@ -5,50 +5,69 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">bookindex</div>
-
+                <div class="card-header"> 
+				
+				</div>
                 <div class="card-body">
                    
 
-					<form method="post" action="{{route('library.book.store')}}" enctype="multipart/form-data">
+					<form method="post" action="{{route('library.book.store')}}" >
 						@csrf
-                    <table>
+                    <table class="table">
                     	<tr>
-                    		<td>title</td>
+                    		<td>العنوان</td>
                     		<td><input name="title" class="form-control"></td>
                     	</tr>
                     	<tr>
-                    		<td>author</td>
+                    		<td>المؤلف</td>
                     		<td><input name="author" class="form-control"></td>
                     	</tr>
                     	<tr>
-                    		<td>description</td>
-                    		<td><input name="description" class="form-control"></td>
+                    		<td>الوصف</td>
+                    		<td>
+							<textarea name="description" cols="30" rows="10" class="form-control"></textarea>
+							</td>
                     	</tr>
                     	<tr>
-                    		<td>edition</td>
-                    		<td><input name="edition" class="form-control"></td>
+                    		<td>الطبعة</td>
+                    		<td>
+							<select name="edition" class="form-control">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+							</td>
                     	</tr>
                     	<tr>
-                    		<td>juz</td>
-                    		<td><input name="juz" class="form-control"></td>
+                    		<td>الجزء إن وجد</td>
+                    		<td>
+							<select name="juz" class="form-control">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+							</td>
                     	</tr>
                     	<tr>
                     		<td>isbn</td>
                     		<td><input name="isbn" class="form-control"></td>
                     	</tr>
                     	<tr>
-                    		<td>prepared</td>
+                    		<td>تحقيق أو إعداد</td>
                     		<td><input name="prepared" class="form-control"></td>
                     	</tr>
                     	<tr>
-                            <td>pages</td>
+                            <td>عدد الصفحات</td>
                             <td><input name="pages" class="form-control" type="number" ></td>
                         </tr>
                     	<tr>
-                    		<td>cate</td>
+                    		<td>الصنف</td>
                     		<td>
-                    			<select name="cate_id">
+                    			<select name="cate_id" class="form-control">
                                     @foreach($cates as $cate)
                     				<option value="{{$cate->id}}">{{$cate->title}}</option>
                                     @endforeach
@@ -57,7 +76,7 @@
                     	</tr>
                         <tr>
                             <td colspan="2">
-                                <button class="btn btn-info btn-block">save</button>
+                                <button class="btn btn-info btn-block">حفظ</button>
                             </td>
                         </tr>
                     </table>

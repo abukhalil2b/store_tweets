@@ -6,10 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <div class="flex flex-sp">
-                        <a class="btn btn-info" href="{{route('library.book.create')}}">كتاب جديد</a>
-                        <a class="btn btn-info" href="{{route('library.cate.create')}}">صنف جديد</a>
-                    </div>
+                    
                 </div>
 
                 <div class="card-body">

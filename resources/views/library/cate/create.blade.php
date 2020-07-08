@@ -5,35 +5,34 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">cate</div>
-
+                <div class="card-header">
+                </div>
                 <div class="card-body">
-                   
-
 					<form method="post" action="{{route('library.cate.store')}}">
 						@csrf
-                        <table>
+                        <table class="table">
                         	<tr>
-                        		<td>title</td>
+                        		<td>اسم الصنف</td>
                         		<td><input name="title" class="form-control"></td>
                         	</tr>
                         	
                         	<tr>
-                        		<td>description</td>
+                        		<td>وصف الصنف</td>
                         		<td><input name="description" class="form-control"></td>
                         	</tr>
                            <tr>
                                <td colspan="2">
-                                   <button class="btn btn-info btn-block">save</button>
+                                   <button class="btn btn-info btn-block">حفظ</button>
                                </td>
                            </tr>
                         </table>
                     </form>
                 </div>
-                <table class="table table-bordered table-striped">
-                    @foreach($cates as $cate)
+                <table class="table ">
+                    @foreach($cates as $key => $cate)
                     <tr>
-                        <td>{{$cate->title}}</td>
+                        <td>{{$key+1}} - {{$cate->title}}</td>
+                        <td>{{$cate->description}}</td>
                     </tr>
                     @endforeach
                 </table>
