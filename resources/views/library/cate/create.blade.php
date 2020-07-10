@@ -8,6 +8,7 @@
                 <div class="card-header">
                 </div>
                 <div class="card-body">
+                    <h4>أصناف الكتب</h4>
 					<form method="post" action="{{route('library.cate.store')}}">
 						@csrf
                         <table class="table">
@@ -15,7 +16,7 @@
                         		<td>اسم الصنف</td>
                         		<td><input name="title" class="form-control"></td>
                         	</tr>
-                        	
+
                         	<tr>
                         		<td>وصف الصنف</td>
                         		<td><input name="description" class="form-control"></td>

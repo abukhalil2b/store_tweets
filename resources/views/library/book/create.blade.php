@@ -5,12 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"> 
-				
+                <div class="card-header">
+
 				</div>
                 <div class="card-body">
-                   
-
+                    <h4>كتاب جديد</h4>
 					<form method="post" action="{{route('library.book.store')}}" enctype="multipart/form-data">
 						@csrf
                     <table class="table">
