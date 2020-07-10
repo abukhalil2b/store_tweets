@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use App\Book;
@@ -34,10 +35,19 @@ class LibraryController extends Controller
 
     public function bookStore(Request $request)
     {
+        
     	$this->validate($request,
-    		['title'=>'required']
-    	);
-    	Book::create($request->except('_token'));
+    		['title'=>'required','cover' => 'mimes:jpeg,bmp,png']
+        );
+        if($request->hasFile('cover')){
+            $extension = $request->file('cover')->extension();
+            $cover = time().'.'.$extension;
+            $request->file('cover')->storeAs(
+                'covers',$cover,'public'
+            );
+        }
+        $book = Book::create($request->except('_token'));
+        $book->update(['cover'=>'covers/'.$cover]);
         return redirect()->route('library.book.index')->with(['status'=>'تم اضافة الكتاب']);
     }
 

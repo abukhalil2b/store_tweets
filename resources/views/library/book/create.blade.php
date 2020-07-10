@@ -11,9 +11,13 @@
                 <div class="card-body">
                    
 
-					<form method="post" action="{{route('library.book.store')}}" >
+					<form method="post" action="{{route('library.book.store')}}" enctype="multipart/form-data">
 						@csrf
                     <table class="table">
+						<tr>
+                    		<td>الغلاف</td>
+                    		<td><input name="cover" type="file" class="form-control"></td>
+                    	</tr>
                     	<tr>
                     		<td>العنوان</td>
                     		<td><input name="title" class="form-control"></td>
