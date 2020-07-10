@@ -20,7 +20,7 @@ class LibraryController extends Controller {
 	 * Book
 	 */
 	public function bookIndex() {
-		$books = Book::paginate(50);
+		return $books = Book::paginate(50);
 		return view('library.book.index', compact('books'));
 	}
 
