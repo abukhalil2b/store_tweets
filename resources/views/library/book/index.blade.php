@@ -54,7 +54,7 @@
                             <td>{{$book->pages}}</td>
                             <td>{{$book->cate->title}}</td>
                     		<td>
-                                <img src="{{asset('storage/covers/'.$book->cover)}}" width="80" alt="cover">
+                                <img src="{{$book->url}}{{$book->cover}}" width="80" alt="cover">
                             </td>
                     	</tr>
                     	@endforeach

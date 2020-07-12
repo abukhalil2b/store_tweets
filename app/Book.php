@@ -14,6 +14,7 @@ class Book extends Model {
 		'isbn',
 		'preparedby',
 		'pages',
+		'url',
 		'cover',
 		'cate_id',
 	];

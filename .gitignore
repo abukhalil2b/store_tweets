@@ -4,6 +4,7 @@
 /storage/*.key
 /vendor
 /resources/.DS_Store
+.phpintel/
 .DS_Store
 .env
 .env.backup

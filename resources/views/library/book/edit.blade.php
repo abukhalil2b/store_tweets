@@ -15,7 +15,7 @@
                     <table class="table">
 						<tr>
                     		<td>
-                    			<img src="{{asset('storage/covers/'.$book->cover)}}" width="80" alt="cover">
+                    			<img src="{{$book->url}}{{$book->cover}}" width="80" alt="cover">
                     		</td>
                     		<td><input name="cover" type="file" class="form-control"></td>
                     	</tr>

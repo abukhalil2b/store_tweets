@@ -42,7 +42,7 @@ class LibraryController extends Controller {
 			);
 		}
 		$book = Book::create($request->except('_token'));
-		$book->update(['cover' => 'https://mawared.site/storage/covers/' . $cover]);
+		$book->update(['cover' => $cover, 'url' => url('/storage/covers') . '/']);
 		return redirect()->route('library.book.index')->with(['status' => 'تم اضافة الكتاب']);
 	}
 
@@ -67,7 +67,7 @@ class LibraryController extends Controller {
 			$request->file('cover')->storeAs(
 				'covers', $cover, 'public'
 			);
-			$book->update(['cover' => $cover]);
+			$book->update(['cover' => $cover, 'url' => url('/storage/covers') . '/']);
 		}
 
 		$book->update($request->except(['_token', 'id', 'cover']));
