@@ -20,7 +20,7 @@ class LibraryController extends Controller {
 	 * Book
 	 */
 	public function bookIndex() {
-		return $books = Book::paginate(50);
+		$books = Book::paginate(50);
 		return view('library.book.index', compact('books'));
 	}
 
@@ -42,7 +42,7 @@ class LibraryController extends Controller {
 			);
 		}
 		$book = Book::create($request->except('_token'));
-		$book->update(['cover' => $cover]);
+		$book->update(['cover' => 'https://mawared.site/storage/covers/' . $cover]);
 		return redirect()->route('library.book.index')->with(['status' => 'تم اضافة الكتاب']);
 	}
 
