@@ -6,18 +6,19 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-
+                    <h4> تعديل بيانات الكتاب</h4>
 				</div>
                 <div class="card-body">
-                    <h4>كتاب جديد</h4>
 					<form method="post" action="{{route('library.book.update')}}" enctype="multipart/form-data">
 						@csrf
                     <table class="table">
 						<tr>
                     		<td>
-                    			<img src="{{$book->url}}{{$book->cover}}" width="80" alt="cover">
+                    			<img src="{{$book->cover_url}}" width="80" alt="{{$book->cover_url}}">
                     		</td>
-                    		<td><input name="cover" type="file" class="form-control"></td>
+                    		<td>
+                                <input value="{{$book->cover_url}}" name="cover_url" class="form-control" placeholder=" رابط الغلاف">
+                            </td>
                     	</tr>
                     	<tr>
                     		<td>العنوان</td>

@@ -14,8 +14,8 @@
 						@csrf
                     <table class="table">
 						<tr>
-                    		<td>الغلاف</td>
-                    		<td><input name="cover" type="file" class="form-control"></td>
+                    		<td>رابط الغلاف</td>
+                    		<td><input name="cover_url" class="form-control"></td>
                     	</tr>
                     	<tr>
                     		<td>العنوان</td>
@@ -28,7 +28,7 @@
                     	<tr>
                     		<td>الوصف</td>
                     		<td>
-							<textarea name="description" cols="30" rows="10" class="form-control"></textarea>
+							<textarea name="description" cols="30" rows="8" class="form-control"></textarea>
 							</td>
                     	</tr>
                     	<tr>

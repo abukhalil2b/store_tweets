@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Book;
 use App\Cate;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class LibraryController extends Controller {
 	/**
@@ -32,17 +31,10 @@ class LibraryController extends Controller {
 	public function bookStore(Request $request) {
 
 		$this->validate($request,
-			['title' => 'required', 'cover' => 'mimes:jpeg,bmp,png']
+			['title' => 'required']
 		);
-		if ($request->hasFile('cover')) {
-			$extension = $request->file('cover')->extension();
-			$cover = time() . '.' . $extension;
-			$request->file('cover')->storeAs(
-				'covers', $cover, 'public'
-			);
-		}
+
 		$book = Book::create($request->except('_token'));
-		$book->update(['cover' => $cover, 'url' => url('/storage/covers') . '/']);
 		return redirect()->route('library.book.index')->with(['status' => 'تم اضافة الكتاب']);
 	}
 
@@ -56,28 +48,13 @@ class LibraryController extends Controller {
 		$this->validate($request,
 			['title' => 'required', 'id' => 'required']
 		);
-		$book = Book::find($request->id);
-		if ($request->hasFile('cover')) {
-			$this->validate($request,
-				['cover' => 'mimes:jpeg,bmp,png']
-			);
-			Storage::delete($book->cover);
-			$extension = $request->file('cover')->extension();
-			$cover = time() . '.' . $extension;
-			$request->file('cover')->storeAs(
-				'covers', $cover, 'public'
-			);
-			$book->update(['cover' => $cover, 'url' => url('/storage/covers') . '/']);
-		}
-
-		$book->update($request->except(['_token', 'id', 'cover']));
+		Book::find($request->id)->update($request->except(['_token', 'id']));
 		return redirect()->route('library.book.index');
 	}
 
 	/**
 	 * Cate
 	 */
-
 	public function cateCreate() {
 		$cates = Cate::all();
 		return view('library.cate.create', compact('cates'));
