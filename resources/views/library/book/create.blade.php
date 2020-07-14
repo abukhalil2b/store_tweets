@@ -6,8 +6,12 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-
-				</div>
+                    @if($errors->any())
+                    @foreach($errors->all() as $error)
+                    <li class="text-danger">{{$error}}</li>
+                    @endforeach
+                    @endif
+                </div>
                 <div class="card-body">
                     <h4>كتاب جديد</h4>
 					<form method="post" action="{{route('library.book.store')}}" enctype="multipart/form-data">

@@ -31,7 +31,7 @@ class LibraryController extends Controller {
 	public function bookStore(Request $request) {
 
 		$this->validate($request,
-			['title' => 'required']
+			['title' => 'required', 'cate_id' => 'required']
 		);
 
 		$book = Book::create($request->except('_token'));
@@ -46,7 +46,7 @@ class LibraryController extends Controller {
 	public function bookUpdate(Request $request) {
 		// return $request->all();
 		$this->validate($request,
-			['title' => 'required', 'id' => 'required']
+			['title' => 'required', 'id' => 'required', 'cate_id' => 'required']
 		);
 		Book::find($request->id)->update($request->except(['_token', 'id']));
 		return redirect()->route('library.book.index');
