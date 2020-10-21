@@ -1,97 +1,340 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html dir=rtl>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Fonts -->
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    <!-- Styles -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/interface.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
 
-            .position-ref {
-                position: relative;
-            }
+</head>
+<body>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+    <div class="overlay">
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-lg-4 logo-table-container">
+                    <table class="logo-table">
+                        <tr>
+                            <td><img class="logo-img" src="{{ asset('img/logo1.png') }}" alt=""></td>
+                            <td>
+                                <span class="logo-title-lg" >الجمعية العمانية للعناية بالقرآن الكريم</span>
+                                <span class="logo-title-sm" >ولاية العامرات</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
 
-            .content {
-                text-align: center;
-            }
+                <div class="col-lg-5 interface-nav-list-container">
+                    <ul class="interface-nav-list">
+                        <li>
+                          <a href="/">الرئيسية</a>
+                        </li>
+                        <li>
+                          <a href="/">عن الجمعية</a>
+                        </li>
+                        <li>
+                          <a href="/">المدونة</a>
+                        </li>
+                        <li>
+                          <a href=""> اتصل بنا </a>
+                        </li>
+                    </ul>
+                </div>
 
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">الرئيسية</a>
+                <div class="col-lg-3 interface-nav-btn-container">
+                    @if(Auth::guard()->check())
+                        <a class="interface-nav-btn interface-nav-btn-logout "
+                        href="{{route('logout')}}">تسجيل الخروج</a>
+                        <a class="interface-nav-btn " href=""> تنزيل الملفات </a>
                     @else
-                        <a href="{{ route('login') }}">دخول</a>
+                        <a class="interface-nav-btn " href="">تسجيل الدخول</a>
+                    @endif
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
                 </div>
+
+            </div>  <!-- nav row -->
+
+            <div class="row interface-title-lg-container pt-5 ">
+                <span class="interface-title-lg">
+                    <span class="interface-title-brown">ابحث </span>و <span class="interface-title-brown">سجل</span> في الدورات القرآنية
+                </span>
+            </div> <!-- title row -->
+
+            @if(session('status'))
+            <div class="row interface-title-lg-container pt-5 ">
+                <div class="alert alert-warning">
+                    <b>{{session('status')}}</b>
+                </div>
+            </div> <!-- alert row -->
             @endif
+        </div>
+    </div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    المكتبة
+
+    <div class="interface-search-bar-container">
+        <span class="fa fa-search"></span>
+        <form action="" method="post">
+        @csrf
+          <input class="interface-search-input" name="title" placeholder="بحث عن دورة" autocomplete="off">
+        </form>
+    </div>
+
+        <div class="divider">
+        <center><h4>دورات قادمة</h4></center>
+        </div>
+
+    <div class="mid-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                            <h4>مقدمة في الفن الإسلامي</h4>
+                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
+                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
+                            <span class="badge badge-success">مجانية</span>
+                            <div>تاريخ البدء 30-11-2020</div>
+                            <a href="{{route('course.details')}}" class="btn btn-block btn-info mt-1">تفاصيل</a>
+                        </p>
+                      </div>
+                    </div>
                 </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                            <h4>مقدمة في الفن الإسلامي</h4>
+                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
+                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
+                            <span class="badge badge-success">مجانية</span>
+                            <div>تاريخ البدء 30-11-2020</div>
+                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                            <h4>مقدمة في الفن الإسلامي</h4>
+                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
+                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
+                            <span class="badge badge-success">مجانية</span>
+                            <div>تاريخ البدء 30-11-2020</div>
+                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
 
-                <div class="links">
-                    <a href="">الكتب</a>
-                    <a href="">المبيعات</a>
-                    <a href="">الطلبات</a>
-                    <a href="">الدروس والمحاضرات</a>
-                    <a href="">خدمات اخرى</a>
+    <div class="divider">
+        <center><h4>دورات قائمة</h4></center>
+    </div>
+
+    <div class="mid-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                            <h4>مقدمة في الفن الإسلامي</h4>
+                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
+                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
+                            <span class="badge badge-success">مجانية</span>
+                            <div>تاريخ البدء 30-11-2020</div>
+                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                            <h4>مقدمة في الفن الإسلامي</h4>
+                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
+                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
+                            <span class="badge badge-success">مجانية</span>
+                            <div>تاريخ البدء 30-11-2020</div>
+                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                            <h4>مقدمة في الفن الإسلامي</h4>
+                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
+                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
+                            <span class="badge badge-success">مجانية</span>
+                            <div>تاريخ البدء 30-11-2020</div>
+                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
+                        </p>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+
+    <div class="divider">
+        <center><h4>دورات منصرمة</h4></center>
+    </div>
+
+    <div class="mid-bar">
+        <div class="container">
+        <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                            <h4>مقدمة في الفن الإسلامي</h4>
+                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
+                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
+                            <span class="badge badge-success">مجانية</span>
+                            <div>تاريخ البدء 30-11-2020</div>
+                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                            <h4>مقدمة في الفن الإسلامي</h4>
+                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
+                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
+                            <span class="badge badge-success">مجانية</span>
+                            <div>تاريخ البدء 30-11-2020</div>
+                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text">
+                            <h4>مقدمة في الفن الإسلامي</h4>
+                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
+                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
+                            <span class="badge badge-success">مجانية</span>
+                            <div>تاريخ البدء 30-11-2020</div>
+                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider">
+        <center><p class="statist-txt">إحصائيات</p></center>
+    </div>
+
+    <div class="mid-bar">
+       <div class="container">
+            <div class="row">
+
+            <div class="col-lg-3 col-md-3 col-sm-12 statist-box">
+                <div class="statist-round statist-round-brown">
+                    <p class="statist-round-txt-up statist-round-txt-up-brown">300</p>
+                    <p class="statist-round-txt-down statist-round-txt-down-brown">متخرج</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 statist-box">
+                <div class="statist-round statist-round-blue">
+                    <p class="statist-round-txt-up statist-round-txt-up-blue">12</p>
+                    <p class="statist-round-txt-down statist-round-txt-down-blue">مدرس</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 statist-box">
+                <div class="statist-round statist-round-green">
+                    <p class="statist-round-txt-up statist-round-txt-up-green">30</p>
+                    <p class="statist-round-txt-down statist-round-txt-down-green">الدورات</p>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-12 footer-link-container">
+                    <div class="footer-link">
+                        <span> <a href="">عن البرنامج</a> |</span>
+                        <span> <a href="">المدونة</a> |</span>
+                        <span> <a href="">اتصل بنا</a> </span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 footer-social-container">
+                    <div class="social">
+                        <img src="img/instagram.png"width="30">
+                        <img src="img/facebook.png" width="30">
+                        <img src="img/twitter.png"  width="30">
+                        <img src="img/youtube.png"  width="30">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5 col-sm-12 footer-logo-container">
+                    <table class="footer-logo-table" >
+                        <tr>
+                            <td>
+                                <img class="footer-logo-img" src="{{ asset('img/logo1.png') }}" alt="">
+                            </td>
+                            <td>
+                                <span class="logo-title-lg" >الجمعية العمانية للعناية بالقرآن الكريم</span>
+                                <span class="logo-title-sm" >ولاية العامرات</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!--/footer-->
+
+</body>
 </html>
+
+
+
+
+
+
+
+
