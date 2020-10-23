@@ -16,7 +16,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/interface.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
 
@@ -93,9 +93,7 @@
         </form>
     </div>
 
-        <div class="divider">
-        <center><h4>دورات قادمة</h4></center>
-        </div>
+    <center><p  class="statist-txt">دورات قادمة</p></center>
 
     <div class="mid-bar">
         <div class="container">
@@ -106,168 +104,43 @@
                       <div class="card-body">
                         <p class="card-text">
                             <h4>مقدمة في الفن الإسلامي</h4>
-                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
-                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
                             <span class="badge badge-success">مجانية</span>
                             <div>تاريخ البدء 30-11-2020</div>
-                            <a href="{{route('course.details')}}" class="btn btn-block btn-info mt-1">تفاصيل</a>
+                            <a href="{{route('course.details')}}" class="btn btn1">تفاصيل</a>
                         </p>
                       </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
-                      <div class="card-body">
-                        <p class="card-text">
-                            <h4>مقدمة في الفن الإسلامي</h4>
-                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
-                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
-                            <span class="badge badge-success">مجانية</span>
-                            <div>تاريخ البدء 30-11-2020</div>
-                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
-                        </p>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
-                      <div class="card-body">
-                        <p class="card-text">
-                            <h4>مقدمة في الفن الإسلامي</h4>
-                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
-                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
-                            <span class="badge badge-success">مجانية</span>
-                            <div>تاريخ البدء 30-11-2020</div>
-                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
-                        </p>
-                      </div>
-                    </div>
-                </div>
+                
             </div>
          </div>
     </div>
 
-    <div class="divider">
-        <center><h4>دورات قائمة</h4></center>
-    </div>
+    <center><p  class="statist-txt">دورات قائمة</p></center>
 
     <div class="mid-bar">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
-                      <div class="card-body">
-                        <p class="card-text">
-                            <h4>مقدمة في الفن الإسلامي</h4>
-                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
-                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
-                            <span class="badge badge-success">مجانية</span>
-                            <div>تاريخ البدء 30-11-2020</div>
-                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
-                        </p>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
-                      <div class="card-body">
-                        <p class="card-text">
-                            <h4>مقدمة في الفن الإسلامي</h4>
-                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
-                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
-                            <span class="badge badge-success">مجانية</span>
-                            <div>تاريخ البدء 30-11-2020</div>
-                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
-                        </p>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
-                      <div class="card-body">
-                        <p class="card-text">
-                            <h4>مقدمة في الفن الإسلامي</h4>
-                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
-                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
-                            <span class="badge badge-success">مجانية</span>
-                            <div>تاريخ البدء 30-11-2020</div>
-                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
-                        </p>
-                      </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
 
-    <div class="divider">
-        <center><h4>دورات منصرمة</h4></center>
-    </div>
+    <center><p  class="statist-txt">دورات منصرمة</p></center>
 
     <div class="mid-bar">
         <div class="container">
-        <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
-                      <div class="card-body">
-                        <p class="card-text">
-                            <h4>مقدمة في الفن الإسلامي</h4>
-                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
-                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
-                            <span class="badge badge-success">مجانية</span>
-                            <div>تاريخ البدء 30-11-2020</div>
-                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
-                        </p>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
-                      <div class="card-body">
-                        <p class="card-text">
-                            <h4>مقدمة في الفن الإسلامي</h4>
-                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
-                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
-                            <span class="badge badge-success">مجانية</span>
-                            <div>تاريخ البدء 30-11-2020</div>
-                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
-                        </p>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                      <img class="card-img-top" src="{{ asset('img/logo1.png') }}" alt="Card image cap">
-                      <div class="card-body">
-                        <p class="card-text">
-                            <h4>مقدمة في الفن الإسلامي</h4>
-                            <h5>مقدمة في الفن الإسلامي هو مساق مجاني   </h5>
-                            <h6>مقدمة في الفن الإسلامي هو مساق مجاني يهدف لتعريف المتعلمين بأبعاده الثقافية والفكرية المختلفة، من خلال التركيز على الرؤية المعرفية والتعريفات ...</h6>
-                            <span class="badge badge-success">مجانية</span>
-                            <div>تاريخ البدء 30-11-2020</div>
-                            <button class="btn btn-block btn-info mt-1" >تفاصيل</button>
-                        </p>
-                      </div>
-                    </div>
-                </div>
+            <div class="row">
+                    
             </div>
         </div>
     </div>
 
-    <div class="divider">
-        <center><p class="statist-txt">إحصائيات</p></center>
-    </div>
+    <center><p class="statist-txt">إحصائيات</p></center>
 
     <div class="mid-bar">
        <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
 
             <div class="col-lg-3 col-md-3 col-sm-12 statist-box">
                 <div class="statist-round statist-round-brown">

@@ -30,8 +30,32 @@ a:hover{
   text-decoration: none;
   cursor: pointer;
 }
+.btn1{
+  color: #26594d;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+}
 
+.card-body{
+  padding: 5px;
+}
 
+.text-head{
+  font-size: 22px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+.img1{
+  width: 80%;
+  height: 30%;
+}
+.img-container{
+  display: block;
+  text-align: center;
+}
 
 
 
