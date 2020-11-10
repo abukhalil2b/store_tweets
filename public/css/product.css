@@ -1,0 +1,35 @@
+.products{
+	margin-top: 10rem;
+}
+.product-details-img-container{
+	margin-top: 2rem;
+	display: block;
+	text-align: center;
+}
+.product-details-img{
+	width: 400px;
+	display: inline-block;
+}
+.product-details-txt{
+	width: 400px;
+	display: inline-block;
+}
+
+.proudct-download-details-btn{
+	background: #515151;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 21px;
+    padding: 10px 30px;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 16px;
+    max-width: 208px;
+    text-align: center;
+    text-decoration: none;
+}
+table th{
+    text-align: center;
+}
+

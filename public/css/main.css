@@ -29,33 +29,44 @@ a{
 a:hover{
   text-decoration: none;
   cursor: pointer;
+  color:#d68917;
 }
-.btn1{
-  color: #26594d;
-  text-align: center;
-  font-weight: bold;
+
+.header{
+  background: url('../img/Header_Products_ar.png') no-repeat center/cover;
+  height: 280px;
   width: 100%;
-}
-
-.card-body{
-  padding: 5px;
-}
-
-.text-head{
-  font-size: 22px;
-  font-weight: bold;
-  display: block;
+  position: relative;
   text-align: center;
-}
-
-.img1{
-  width: 80%;
-  height: 30%;
-}
-.img-container{
   display: block;
-  text-align: center;
+
 }
 
+ul{
+background:linear-gradient(180deg,#000,transparent)
+}
 
+ul li{
+  display: inline-block;
+    list-style: none;
+    margin: 2rem;
+    font-weight: bolder;
+    font-size: 22px;
+    
+}
+ul li a{
+ color: #fff; 
+}
 
+.footer{
+  background: linear-gradient(0deg,#000,transparent);
+  height: 10vh;
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-top: 200px
+
+}
+.footer .box1 a{
+ display: block;
+}
