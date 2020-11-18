@@ -14,9 +14,9 @@ class CreateReplaysTable extends Migration {
 		Schema::create('replays', function (Blueprint $table) {
 			$table->id();
 			$table->date('date')->nullable();
-			$table->string('body');
-			$table->string('name');
-			$table->string('info');
+			$table->text('body');
+			$table->string('name')->nullable();
+			$table->string('info')->nullable();
 			$table->string('img')->nullable();
 			$table->string('vid')->nullable();
 			$table->string('link')->nullable();

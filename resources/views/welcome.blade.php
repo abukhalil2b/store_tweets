@@ -15,6 +15,7 @@
 	<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 	    @csrf
 	</form>
+	<a href="{{ route('twitte.create') }}" class="text-secondary btn-block mt-3">اضافة تغريدة</a>
 @else
 <div class="container">
 	<div class="row justify-content-center">
@@ -64,9 +65,16 @@
 				<div class="card-header">عقيدة</div>
 				<div class="card-body">
 					@foreach($aqeedaTweets as $twitte)
-					<div class="alert alert-info">
-						{{$twitte->body}}
-						<div>{{$twitte->date}}</div>
+					<div class="alert alert-info ">
+						<div class="badge badge-primary">{{$twitte->id}}</div>
+						<p>
+							{{$twitte->body}}
+							<div>{{$twitte->date}}</div>
+						</p>
+						@if($twitte->img)
+						<a href="{{asset('storage/'.$twitte->img)}}">صورة</a>
+						@endif
+						<a href="{{route('replay.create',['twitte_id'=>$twitte->id])}}">الردود {{$twitte->replays->count()}}</a>
 					</div>
 					@endforeach
 				</div>

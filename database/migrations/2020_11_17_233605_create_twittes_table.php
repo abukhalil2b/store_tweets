@@ -13,9 +13,9 @@ class CreateTwittesTable extends Migration {
 	public function up() {
 		Schema::create('twittes', function (Blueprint $table) {
 			$table->id();
-			$table->date('date');
+			$table->date('date')->nullable();
 			$table->string('title')->nullable();
-			$table->string('body');
+			$table->text('body');
 			$table->string('img')->nullable();
 			$table->string('vid')->nullable();
 			$table->string('link')->nullable();
