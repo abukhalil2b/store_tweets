@@ -1,93 +1,55 @@
-	/*------ overlay --------*/
-	.overlay{
-		background: url('../img/bg.png');
-		min-height: 450px;
-		background-size: cover;
-		color: #fff;
-	}
+@font-face {
+  font-family: "Helvetica Neue";
+  src:
+  url('../fonts/HelveticaNeueLTW20-Light.woff') format('woff'),
+  url('../fonts/HelveticaNeueLTW20-Light.svg') format('svg'),
+  url('../fonts/HelveticaNeueLTW20-Light.eot') format('embedded-opentype');
+}
+@font-face {
+  font-family: "KFC Naskh";
+  src:
+  url('../fonts/KFC_naskh.otf') format('opentype');
+}
 
-	body{
-		margin: 0;padding: 0;
-	}
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 700;
+  src:
+  url('../fonts/HelveticaNeueLTW20-Bold.woff') format('woff'),
+  url('../fonts/HelveticaNeueLTW20-Bold.svg') format('svg'),
+  url('../fonts/HelveticaNeueLTW20-Bold.eot') format('embedded-opentype');
+}
+body{
+	font-family: 'Helvetica Neue';
+	direction: rtl;
+	text-align: right;
 
-	.leftside-container{
-		height: 100vh;
-		width: 684.16px;
-		position: relative;
-	}
-
-	.img-nav{
-		height: 100%;
-	}
-	.side-content{
-		position: absolute;
-		left: 26%;
-		top: 35%;
-		text-align: center;
-	}
-	.side-btn{
-		color:#67347f;
-		font-weight: bolder;
-		font-size: 33px;
-	}
-	.welcome-container{
-		display: flex;
-	}
-	.d-block{
-		height: 100vh;
-		width:100%;
-	}
-	.h1{
-		font-size: 33px;
-		margin-top: 5px;
-		text-align: center;
-	}
-	.divider{
-		border-bottom: 3px solid #ddd;
-		width: 25%;
-	}
-
-
-	.text-divider {
-		display: flex;
-		align-items: center; 
-	}
-
-	.text-divider::before,
-	.text-divider::after {
-		content: '';
-		height: 1px;
-		background-color: silver;
-		flex-grow: 1; 
-	}
-
-	/*----------news sections---------*/
-	.news-section{
-		height: 100vh;
-		text-align: right;
-		margin: 2rem 0;
-	}
-	.news-section img{
-		width: 280px;
-	}
-
-	/*----------media query---------*/
-	@media (max-width:768px) {
-		.leftside-container{
-			display: none;
-		}
-	}
-
-	@media (max-width:767px) {
-		.txt-md-center{
-			text-align: center;
-		}
-	}
-
-/*
-    --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-*/
+}
+a{
+  display: inline-block;
+    width: 60px;
+    text-align: center;
+    font-weight: bold;
+    padding: 2px 5px;
+}
+a:hover{
+  text-decoration: none;
+  color:#000;
+}
+.card{
+  padding: 2px;
+}
+.card-body{
+  padding: 5px;
+}
+.alert{
+  padding: 5px;
+  margin-bottom: 3px;
+}
+.category{
+  color: grey;
+}
+.name-info{
+  color: grey;
+  font-size: 12px;
+}

@@ -1,0 +1,42 @@
+server {
+    listen 80;
+    server_name anjouan.me;
+    root /var/www/anjouan/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/anjouan /etc/nginx/sites-enabled/
+CREATE DATABASE anjouan;
+SELECT user,host FROM mysql.user;
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Sultan@2020';
+
+sudo chown -R www-data.www-data /var/www/anjouan/storage
+sudo chown -R www-data.www-data /var/www/anjouan/bootstrap/cache
+

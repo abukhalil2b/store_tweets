@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Twitte;
 
 class HomeController extends Controller {
 
@@ -8,11 +9,8 @@ class HomeController extends Controller {
 		$this->middleware('auth');
 	}
 
-	public function welcome() {
-		return view('welcome');
-	}
-
-	public function index() {
-		return view('home');
+	public function home() {
+		$twittes = Twitte::paginate(100);
+		return view('home', compact('twittes'));
 	}
 }

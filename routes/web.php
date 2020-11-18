@@ -2,16 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
-Route::get('/', function () {
-	return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
+Route::post('search', 'WelcomeController@search')->name('search');
 
-Route::get('/products', function () {
-	return view('products');
-})->name('products');
+Route::get('home', 'HomeController@home')->name('home');
 
-Route::get('/product-details', function () {
-	return view('product-details');
-})->name('product-details');
+Route::get('twitte/create', 'TwitteController@create')->name('twitte.create');
+Route::post('twitte/store', 'TwitteController@store')->name('twitte.store');
+
+Route::get('replay/{twitte_id}/create', 'ReplayController@create')->name('replay.create');
+Route::post('replay/store', 'ReplayController@store')->name('replay.store');
