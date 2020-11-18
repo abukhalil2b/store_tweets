@@ -7,9 +7,8 @@ use Illuminate\Http\Request;
 class WelcomeController extends Controller {
 
 	public function index() {
-		$fikrTweets = Twitte::where('category', 'fikr')->paginate(30);
-		$aqeedaTweets = Twitte::where('category', 'aqeeda')->paginate(30);
-		return view('welcome', compact('fikrTweets', 'aqeedaTweets'));
+		$twittes = Twitte::orderby('id', 'desc')->paginate(100);
+		return view('welcome', compact('twittes'));
 	}
 
 	public function search(Request $request) {

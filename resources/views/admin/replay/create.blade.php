@@ -31,6 +31,14 @@
 					<input name="link" class="form-control">
 				</div>
 				<div class="form-group">
+					فيديو للتغريدة (إن وجد)
+					<input name="vid" class="form-control">
+				</div>
+				<div class="form-group">
+					صورة للتغريدة (صورة الشاشة)
+					<input type="file" name="img" class="form-control">
+				</div>
+				<div class="form-group">
 					نوع الرد
 					<select name="category" class="form-control">
 						<option value="qaseeda">قصيدة</option>
@@ -38,16 +46,60 @@
 					</select>
 				</div>
 				<div class="form-group">
-					صورة للتغريدة (صورة الشاشة)
-					<input type="file" name="img" class="form-control">
-				</div>
-				<div class="form-group">
 					اسم صاحب الرد
 					<input  name="name" class="form-control">
 				</div>
 				<div class="form-group">
-					معلومة بسيطة عن صاحب الرد
+					تعريف بصاحب الرد
+					<select name="job" class="form-control">
+						<option value="dr_academy">دكتور أكاديمي</option>
+						<option value="thinker">مفكر</option>
+						<option value="dr_hostpital">طبيب</option>
+						<option value="engineer">مهندس</option>
+						<option value="da3ya">داعية</option>
+						<option value="political">سياسي</option>
+						<option value="officail_channel">قناة تلفزيونية رسمية</option>
+						<option value="unofficial_channel">قناة تلفزيونية غير رسمية</option>
+						<option value="organization">منظمة عالمية</option>
+						<option value="reporter">صحيفة</option>
+					</select>
+				</div>
+				<div class="form-group">
+					معلومة أخرى
 					<input  name="info" class="form-control">
+				</div>
+				<div class="form-group">
+					التفاعل مع الرد
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								إعادة التغريدات
+								<select name="retweet_number" class="form-control">
+									<option value="50">أكثر من 50</option>
+									<option value="100">أكثر من 100</option>
+									<option value="150">أكثر من 150</option>
+									<option value="200">أكثر من 200</option>
+									<option value="250">أكثر من 250</option>
+									<option value="300">أكثر من 300</option>
+									<option value="350">أكثر من 350</option>
+									<option value="400">أكثر من 400</option>
+								</select>
+							</div>
+							<div class="col-md-6">
+								الإعجابات
+								<select name="like_number" class="form-control">
+									<option value="50">أكثر من 50</option>
+									<option value="100">أكثر من 100</option>
+									<option value="150">أكثر من 150</option>
+									<option value="200">أكثر من 200</option>
+									<option value="250">أكثر من 250</option>
+									<option value="300">أكثر من 300</option>
+									<option value="350">أكثر من 350</option>
+									<option value="400">أكثر من 400</option>
+								</select>
+							</div>
+						</div>
+					</div>
 				</div>
 				<input type="hidden" name="twitte_id" value="{{$twitte->id}}">
 				<button class="btn btn-block btn-info">حفظ</button>

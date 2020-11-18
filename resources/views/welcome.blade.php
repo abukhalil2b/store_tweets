@@ -39,17 +39,22 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6 mt-3">
+
+		<div class="col-lg-12 mt-3">
 			<div class="card">
-				<div class="card-header">فكرية</div>
 				<div class="card-body">
-					@foreach($fikrTweets as $twitte)
+					@foreach($twittes as $twitte)
 					<div class="alert alert-info ">
-						<div class="badge badge-primary">{{$twitte->id}}</div>
 						<p>
+							<span class="badge badge-primary">{{$twitte->id}}</span>
 							{{$twitte->body}}
 							<div>{{$twitte->date}}</div>
 						</p>
+						الصنف
+						<span class="cate">[ {{__('cates.'.$twitte->category)}} ]</span>
+
+						إعادة التغريدة <span class="number">{{$twitte->retweet_number}}</span>
+						الإعجاب <span class="number">{{$twitte->like_number}}</span>
 						@if($twitte->img)
 						<a href="{{asset('storage/'.$twitte->img)}}">صورة</a>
 						@endif
@@ -59,30 +64,6 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="col-md-6 mt-3">
-			<div class="card">
-				<div class="card-header">عقيدة</div>
-				<div class="card-body">
-					@foreach($aqeedaTweets as $twitte)
-					<div class="alert alert-info ">
-						<div class="badge badge-primary">{{$twitte->id}}</div>
-						<p>
-							{{$twitte->body}}
-							<div>{{$twitte->date}}</div>
-						</p>
-						@if($twitte->img)
-						<a href="{{asset('storage/'.$twitte->img)}}">صورة</a>
-						@endif
-						<a href="{{route('replay.create',['twitte_id'=>$twitte->id])}}">الردود {{$twitte->replays->count()}}</a>
-					</div>
-					@endforeach
-				</div>
-			</div>
-		</div>
-
-
-
 
     </div>
 </div>

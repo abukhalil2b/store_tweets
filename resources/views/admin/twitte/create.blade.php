@@ -23,22 +23,35 @@
 					<input name="link" class="form-control">
 				</div>
 				<div class="form-group">
+					فيديو للتغريدة (إن وجد)
+					<input name="vid" class="form-control">
+				</div>
+				<div class="form-group">
+					صورة للتغريدة (إن وجد)
+					<input type="file" name="img" class="form-control">
+				</div>
+				<div class="form-group">
 					صنف التغريدة
 					<select name="category" class="form-control">
 						<option value="fikr">فكر</option>
 						<option value="aqeeda">عقيدة</option>
+						<option value="fiqh">فقه</option>
+						<option value="event">حادثة/واقعة مستجدة</option>
+						<option value="date">تأريخ</option>
+						<option value="fatawa">فتاوى</option>
+						<option value="condolence">تعزية</option>
+						<option value="congratulation">تهنئة</option>
+						<option value="brotherhood">رسائل أخوية</option>
 					</select>
 				</div>
 				<div class="form-group">
 					مصدر التغريدة
 					<select name="source" class="form-control">
 						<option value="quotes">إقتباس</option>
-						<option value="new">جديدة</option>
+						<option value="new">معد حديثا</option>
+						<option value="live">بث مباشر</option>
+						<option value="clip">مقطع</option>
 					</select>
-				</div>
-				<div class="form-group">
-					صورة للتغريدة (إن وجد)
-					<input type="file" name="img" class="form-control">
 				</div>
 
 				<button class="btn btn-block btn-info">حفظ</button>
