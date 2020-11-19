@@ -18,6 +18,7 @@ class CreateTwittesTable extends Migration {
 			$table->text('body');
 			$table->integer('retweet_number')->default(0);
 			$table->integer('like_number')->default(0);
+			$table->integer('replay_number')->default(0);
 			$table->string('img')->nullable();
 			$table->string('vid')->nullable();
 			$table->string('link')->nullable();

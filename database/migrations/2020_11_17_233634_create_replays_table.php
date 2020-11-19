@@ -17,6 +17,7 @@ class CreateReplaysTable extends Migration {
 			$table->text('body');
 			$table->string('name')->nullable();
 			$table->string('info')->nullable();
+			$table->string('job')->nullable();
 			$table->integer('retweet_number')->default(0);
 			$table->integer('like_number')->default(0);
 			$table->string('img')->nullable();

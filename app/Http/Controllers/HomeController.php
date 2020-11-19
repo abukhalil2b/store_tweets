@@ -10,7 +10,7 @@ class HomeController extends Controller {
 	}
 
 	public function home() {
-		$twittes = Twitte::paginate(100);
+		$twittes = Twitte::orderby('id', 'desc')->paginate(100);
 		return view('home', compact('twittes'));
 	}
 }

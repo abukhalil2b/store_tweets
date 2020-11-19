@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Replay;
 use App\Twitte;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,17 @@ class WelcomeController extends Controller {
 	}
 
 	public function search(Request $request) {
-		$search = Twitte::where('body', 'like', '%' . $request->body . '%');
-		$searchResults = $search->orWhere('date', 'like', '%' . $request->body . '%')->get();
-		return view('search.result', compact('searchResults'));
+
+		if ($request->table == 'twitte') {
+			$search = Twitte::where('body', 'like', '%' . $request->body . '%');
+			$searchResults = $search->orWhere('date', 'like', '%' . $request->body . '%')->get();
+			return view('search.twitte.result', compact('searchResults'));
+		} else {
+			$search = Replay::where('body', 'like', '%' . $request->body . '%');
+			$searchResults = $search->orWhere('date', 'like', '%' . $request->body . '%')->get();
+			return view('search.replay.result', compact('searchResults'));
+		}
+
 	}
 
 }

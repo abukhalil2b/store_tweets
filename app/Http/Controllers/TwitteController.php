@@ -8,12 +8,13 @@ use Illuminate\Http\Request;
 
 class TwitteController extends Controller {
 
-	public function __construct() {
-		$this->middleware('auth');
-	}
-
 	public function create() {
 		return view('admin.twitte.create');
+	}
+
+	public function show($id) {
+		$twitte = Twitte::find($id);
+		return view('admin.twitte.show', compact('twitte'));
 	}
 
 	public function store(Request $request) {

@@ -11,30 +11,26 @@
             @endif
             	<a class="btn btn-block btn-danger"
             	href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        تسجيل الخروج
+                document.getElementById('logout-form').submit();">
+                تسجيل الخروج
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-                <a href="{{route('twitte.create')}}" class="btn btn-info btn-block mt-3">اضف تغريدة</a>
-
-				عدد التغريدات
-				<div class="badge badge-primary mt-3">
-					{{count($twittes)}}
-				</div>
+                <a href="{{route('twitte.create')}}" class="btn btn-info btn-block mt-3">+اضف تغريدة</a>
 				@foreach($twittes as $twitte)
-				<div class="alert alert-info pb-1">
-					<div class="badge badge-primary">{{$twitte->id}}</div>
+				<div class="alert alert-info pb-1 mt-1">
 					<p>
 						{{$twitte->body}}
-						<div>{{$twitte->date}}</div>
 					</p>
 					@if($twitte->img)
 					<a href="{{asset('storage/'.$twitte->img)}}">صورة</a>
 					@endif
-					<a href="{{route('replay.create',['twitte_id'=>$twitte->id])}}">الردود {{$twitte->replays->count()}}</a>
+					@if($twitte->vid)
+					<a href="{{$twitte->vid}}">مقطع</a>
+					@endif
+					<a href="{{route('replay.create',['twitte_id'=>$twitte->id])}}">+اضف الردود </a>
 				</div>
 				@endforeach
 				{{ $twittes->links() }}

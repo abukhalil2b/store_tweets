@@ -14,7 +14,12 @@ class ReplayController extends Controller {
 
 	public function create($twitte_id) {
 		$twitte = Twitte::find($twitte_id);
-		return view('admin.replay.create', compact('twitte'));
+		$replays = Replay::where('twitte_id', $twitte_id)->orderby('id', 'desc')->get();
+		return view('admin.replay.create', compact('twitte', 'replays'));
+	}
+	public function show($id) {
+		$replay = Replay::find($id);
+		return view('admin.replay.show', compact('replay'));
 	}
 
 	public function store(Request $request) {
