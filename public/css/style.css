@@ -23,7 +23,7 @@ body{
 	font-family: 'Helvetica Neue';
 	direction: rtl;
 	text-align: right;
-
+  height: 100vh;
 }
 a{
   display: inline-block;

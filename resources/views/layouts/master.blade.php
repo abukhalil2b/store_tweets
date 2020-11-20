@@ -13,13 +13,12 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/include.css')}}">
 
 </head>
 <body>
-
     @include('layouts.header')
 	@yield('content')
     @include('layouts.footer')
-
 </body>
 </html>

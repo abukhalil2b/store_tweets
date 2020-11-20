@@ -1,4 +1,5 @@
-	<div class="header">
-		<nav >
-		</nav>
-	</div>
+<div class="header">
+	<nav>
+		<img src="{{asset('img/logo.png')}}" alt="">
+	</nav>
+</div>

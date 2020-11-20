@@ -42,6 +42,33 @@
     <div class="row justify-content-center">
 		<div class="col-lg-12 mt-3">
 			<b>التغريدات</b>
+			<div class="alert alert-secondary mt-1">
+				تصنيف التغريدات
+				<span class="badge badge-primary">
+					فكر {{$twittes->where('category','fikr')->count()}}
+				</span>
+				<span class="badge badge-primary">
+					دعقيدة {{$twittes->where('category','aqeeda')->count()}}
+				</span>
+				<span class="badge badge-primary">
+					فقه {{$twittes->where('category','fiqh')->count()}}
+				</span>
+				<span class="badge badge-primary">
+					حادثة/واقعة مستجدة {{$twittes->where('category','date')->count()}}
+				</span>
+				<span class="badge badge-primary">
+					فتاوى {{$twittes->where('category','fatawa')->count()}}
+				</span>
+				<span class="badge badge-primary">
+					تعزية {{$twittes->where('category','condolence')->count()}}
+				</span>
+				<span class="badge badge-primary">
+					تهنئة {{$twittes->where('category','congratulation')->count()}}
+				</span>
+				<span class="badge badge-primary">
+					رسائل أخوية {{$twittes->where('category','brotherhood')->count()}}
+				</span>
+			</div>
 			<div class="card">
 				<div class="card-body">
 					@foreach($twittes as $twitte)
@@ -63,3 +90,4 @@
     </div>
 </div>
 @endsection
+
