@@ -30,11 +30,16 @@ a{
   min-width: 30px;
   text-align: center;
   font-weight: bold;
-  padding: 1px 2px;
+  padding: 1px 3px;
 }
 a:hover{
   text-decoration: none;
   color:#000;
+}
+select{
+  font-size: 14px !important;
+  padding: 0 1px !important;
+  height: 37px !important;
 }
 .card{
   padding: 2px;
@@ -75,4 +80,26 @@ a:hover{
   color: #7d30d2;
   font-weight: bold;
 }
+.alert-info{
+  color: #1e598a;
+  background-color: #f2f2f2;
+}
+.btn-info{
+  color: #144ef5;
+  border-color: #144ef5;
+}
+.head-title{
+    color: #2ea5ca;
+  font-weight: bold;
+  font-size: 22px;
+}
+.head-subtitle{
+  color: #789ab5;
+  font-weight: bold;
+  font-size: 20px;
+}
 
+/* spreads */
+.spreads{
+  display: flex;
+}

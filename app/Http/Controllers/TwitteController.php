@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class TwitteController extends Controller {
 
 	public function create() {
-		return view('admin.twitte.create');
+		$twittes = Twitte::orderby('id', 'desc')->paginate(100);
+		return view('admin.twitte.create', compact('twittes'));
 	}
 
 	public function show($id) {

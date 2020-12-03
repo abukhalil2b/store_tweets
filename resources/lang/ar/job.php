@@ -1,6 +1,6 @@
 <?php
 return [
-	'thinker' => 'مفكد',
+	'thinker' => 'مفكر',
 	'dr_academy' => 'كتور أكاديمي',
 	'dr_hospital' => 'طبيب',
 	'engineer' => 'مهندس',

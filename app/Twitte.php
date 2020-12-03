@@ -9,4 +9,9 @@ class Twitte extends Model {
 	public function replays() {
 		return $this->hasMany(Replay::class);
 	}
+
+	public function spreads() {
+		return $this->hasMany(Spread::class);
+	}
+
 }

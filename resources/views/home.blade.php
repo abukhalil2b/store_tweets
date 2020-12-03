@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
 		<div class="col-md-12 mt-3">
@@ -9,7 +10,7 @@
                     {{ session('status') }}
                 </div>
             @endif
-            	<a class="btn btn-block btn-danger"
+            	<a class="btn btn-block btn-danger "
             	href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                 تسجيل الخروج
@@ -25,12 +26,25 @@
 						{{$twitte->body}}
 					</p>
 					@if($twitte->img)
-					<a href="{{asset('storage/'.$twitte->img)}}">صورة</a>
+					<a href="{{asset('storage/'.$twitte->img)}}">
+						<i class="fas fa-image"></i>
+						صورة
+					</a>
 					@endif
 					@if($twitte->vid)
-					<a href="{{$twitte->vid}}">مقطع</a>
+					<a href="{{$twitte->vid}}">
+						<i class="fas fa-video"></i>
+						مقطع
+					</a>
 					@endif
-					<a href="{{route('replay.create',['twitte_id'=>$twitte->id])}}">+اضف الردود </a>
+					<a href="{{route('replay.create',['twitte_id'=>$twitte->id])}}">
+						<i class="fas fa-plus-square"></i>
+						اضف الردود
+					</a>
+					<a href="{{route('spread.create',['twitte_id'=>$twitte->id])}}">
+					<i class="fas fa-plus-square"></i>
+					اضف الإنتشار
+					</a>
 				</div>
 				@endforeach
 				{{ $twittes->links() }}

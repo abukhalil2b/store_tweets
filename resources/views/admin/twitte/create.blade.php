@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
     	<div class="col-md-12 mt-3">
+    		<center class="head-title">إضافة التغريدات </center>
     		<form action="{{route('twitte.store')}}" method="post" enctype="multipart/form-data">
 				@csrf
 				<div class="form-group">
@@ -83,9 +84,48 @@
 					</div>
 				</div>
 
-				<button class="btn btn-block btn-info">حفظ</button>
+				<button class="btn btn-block btn-info">إضافة التغريدة</button>
 			</form>
     	</div>
+    </div>
+    <div class="row">
+		<div class="col-md-12">
+			@foreach($errors->all() as $error)
+			<b class="text-danger">{{$error}}</b>
+			@endforeach
+		</div>
+	</div>
+    <div class="row">
+    	<div class="col-md-12">
+		<center class="head-subtitle mt-3">قائمة التغريدات</center>
+    	@foreach($twittes as $twitte)
+		<div class="alert alert-info pb-1 mt-1">
+			<i class="fab fa-twitter"></i>
+			<p>
+				{{$twitte->body}}
+			</p>
+			@if($twitte->img)
+			<a href="{{asset('storage/'.$twitte->img)}}">
+				<i class="fas fa-image"></i>
+			صورة</a>
+			@endif
+			@if($twitte->vid)
+			<a href="{{$twitte->vid}}">
+				<i class="fas fa-video"></i>
+			مقطع</a>
+			@endif
+			<a href="{{route('replay.create',['twitte_id'=>$twitte->id])}}">
+				<i class="fas fa-plus"></i>
+				اضف الردود
+			</a>
+			<a href="{{route('spread.create',['twitte_id'=>$twitte->id])}}">
+				<i class="fas fa-plus"></i>
+				اضف الإنتشار
+			</a>
+		</div>
+		@endforeach
+		{{ $twittes->links() }}
+		</div>
     </div>
 </div>
 @endsection

@@ -149,6 +149,9 @@ return [
 	'attributes' => [
 		'body' => 'الموضوع',
 		'name' => 'الإسم',
+		'number' => 'العدد',
+		'password' => 'كلمة المرور',
+		'country_id' => 'الدولة',
 	],
 
 ];
