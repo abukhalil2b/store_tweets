@@ -26,6 +26,7 @@ class ReplayController extends Controller {
 		$request->validate([
 			'body' => 'required',
 			'name' => 'required',
+			'date' => 'required',
 		]);
 		$request['user_id'] = Auth::user()->id;
 		$imgPath = NULL;

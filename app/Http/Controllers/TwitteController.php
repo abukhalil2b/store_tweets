@@ -19,8 +19,16 @@ class TwitteController extends Controller {
 	}
 
 	public function store(Request $request) {
+		if ($request->source != 'clip') {
+			$request->validate([
+				'body' => 'required',
+			]);
+		}
 		$request->validate([
-			'body' => 'required',
+			'replay_number' => 'required',
+			'retweet_number' => 'required',
+			'like_number' => 'required',
+			'date' => 'required',
 		]);
 
 		$request['user_id'] = Auth::user()->id;

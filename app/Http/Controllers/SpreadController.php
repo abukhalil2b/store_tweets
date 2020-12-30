@@ -18,6 +18,7 @@ class SpreadController extends Controller {
 			'twitte_id' => 'required',
 			'country_id' => 'required',
 			'number' => 'required',
+
 		]);
 		Spread::create(['twitte_id' => $request->twitte_id, 'country_id' => $request->country_id, 'number' => $request->number]);
 		return redirect()->back()->with(['status' => 'تم']);

@@ -152,6 +152,10 @@ return [
 		'number' => 'العدد',
 		'password' => 'كلمة المرور',
 		'country_id' => 'الدولة',
+		'replay_number' => 'الردود',
+		'like_number' => 'الإعجاب',
+		'retweet_number' => 'إعادة التغريدة',
+		'date' => 'تاريخ',
 	],
 
 ];

@@ -24,6 +24,8 @@ body{
 	direction: rtl;
 	text-align: right;
   height: 100vh;
+  color: #fff;
+  background-color: #000;
 }
 a{
   display: inline-block;
@@ -35,6 +37,10 @@ a{
 a:hover{
   text-decoration: none;
   color:#000;
+}
+.select2-results__option[aria-selected] {
+
+    color: #000;
 }
 select{
   font-size: 14px !important;
@@ -85,8 +91,8 @@ select{
   background-color: #f2f2f2;
 }
 .btn-info{
-  color: #144ef5;
-  border-color: #144ef5;
+  color: #fff;
+  border-color: #fff;
 }
 .head-title{
     color: #2ea5ca;

@@ -13,8 +13,8 @@
 		<div class="col-md-12 mt-3">
 			<b>التغريدة</b>
 			<div class="alert alert-info pb-1">
-					<center class="title">{{$twitte->title}}</center>
-		    		{{$twitte->body}}
+					<center class="title text-xl">{{$twitte->title}}</center>
+		    		<b class="body text-lg">{{$twitte->body}}</b>
 		    		<small class="date">{{$twitte->date}}</small>
 		    		<p>
 		    			<span class="cate">[{{__('sources.'.$twitte->source)}}]</span>
