@@ -21,6 +21,10 @@
 		<i class="fas fa-book"></i>
 		إدارة التغريدات والردود
 	</a>
+	<a href="{{ route('country.create') }}" class="text-secondary btn-block mt-3">
+		<i class="fas fa-flag"></i>
+		إدارة أسماء الدول
+	</a>
 @else
 <div class="container">
 	<div class="row justify-content-center">

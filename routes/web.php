@@ -36,3 +36,8 @@ Route::post('replay/store', 'ReplayController@store')
 	->name('replay.store');
 
 Route::get('users/export', 'HomeController@export');
+
+Route::get('country/create', 'HomeController@countryCreate')->name('country.create');
+Route::get('country/edit/{country}', 'HomeController@countryEdit')->name('country.edit');
+Route::post('country/store', 'HomeController@countryStore')->name('country.store');
+Route::post('country/update', 'HomeController@countryUpdate')->name('country.update');
